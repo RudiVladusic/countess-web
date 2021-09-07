@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/src/styles/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Crimson+Text&family=Montserrat:wght@200;400&display=swap"
+      rel="stylesheet"
+    />
+    <meta
+      property="og:title"
+      content="The Countess - Croatian gothic metal band"
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:image"
+      content="https://countess.netlify.app/src/images/Full-band01.jpeg"
+    />
+    <meta name="description" content="Gothic metal band from Sinj, Croatia." />
+    <link
+      rel="shortcut icon"
+      href="src/images/favicon.ico"
+      type="image/x-icon"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/src/images/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/src/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/src/images/favicon-16x16.png"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@6/swiper-bundle.min.css"
+    />
+    <title>The Countess</title>
+  </head>
+  <body>
+    <div class="modal-event-fullscreen">
+      <div class="modal-event-fullscreen__exit">
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+
+      <div class="video-container">
+        <iframe
+          width="560"
+          height="315"
+          data-src="https://www.youtube-nocookie.com/embed/tedquuaI77A"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+    <nav>
+      <img src="/src/images/logo.png" alt="logo for navbar" class="nav-logo" />
+      <div class="navbar-wrapper">
+        <div class="desktop-nav">
+          <div class="desktop-nav__links--group">
+            <a class="navigation-link" data-nav="0">Home</a>
+            <a class="navigation-link" data-nav="1">Bio</a>
+          </div>
+
+          <div class="desktop-nav-logo">
+            <img src="/src/images/logo-band-v2.png" alt="logo for navbar" />
+          </div>
+
+          <div class="desktop-nav__links--group">
+            <a class="navigation-link" data-nav="2">Gallery</a>
+            <a class="navigation-link" data-nav="3">Merch</a>
+            <a class="navigation-link" data-nav="4">Contact</a>
+          </div>
+        </div>
+
+        <div class="burger">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="mobile-nav">
+      <div class="mobile-nav-links">
+        <a class="navigation-link" data-nav="0">Home</a>
+        <a class="navigation-link" data-nav="1">Bio</a>
+        <a class="navigation-link" data-nav="2">Gallery</a>
+        <a class="navigation-link" data-nav="3">Merch</a>
+        <a class="navigation-link" data-nav="4">Contact</a>
+      </div>
+      <div class="mobile-nav-info">
+        <a href="https://www.instagram.com/thecountessband/"
+          ><i class="fab fa-instagram"></i
+        ></a>
+        <a
+          href="https://www.youtube.com/channel/UCDJ8oxcW1behNPwEvNiuX2g/featured"
+          ><i class="fab fa-youtube"></i
+        ></a>
+        <a href="https://www.facebook.com/thecountessband/"
+          ><i class="fab fa-facebook"></i
+        ></a>
+      </div>
+
+      <img src="/src/images/logo-band-v2.png" alt="logo for navbar" />
+      <div class="mobile-nav-signiature">
+        <p>
+          <a href="mailto:thecountessband@gmail.com"
+            >thecountessband@gmail.com</a
+          >
+        </p>
+        <p>&copy; The Countess 2021</p>
+      </div>
+    </div>
+
+    <section class="landing" data-index="0">
+      <div class="landing-wrapper">
+        <div class="landing-wrapper__overlay">
+          <header>
+            <h2 class="section-heading">Croatian gothic metal</h2>
+            <h3>New album online</h3>
+            <a
+              href="https://www.youtube.com/channel/UCDJ8oxcW1behNPwEvNiuX2g/featured"
+            >
+              <button>
+                <i class="fas fa-headphones-alt"></i>
+                Listen
+                <i class="fas fa-headphones-alt"></i>
+              </button>
+            </a>
+          </header>
+
+          <div class="landing-icons">
+            <div class="landing-icon-container">
+              <a href="https://www.instagram.com/thecountessband/"
+                ><i class="fab fa-instagram"></i
+              ></a>
+            </div>
+            <div class="landing-icon-container">
+              <a
+                href="https://www.youtube.com/channel/UCDJ8oxcW1behNPwEvNiuX2g/featured"
+                ><i class="fab fa-youtube"></i
+              ></a>
+            </div>
+            <div class="landing-icon-container">
+              <a href="https://www.facebook.com/thecountessband/"
+                ><i class="fab fa-facebook"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <div class="landing-wrapper__img"></div>
+      </div>
+    </section>
+    <main class="main-content-wrapper">
+      <section class="album-content">
+        <div class="album-content-wrapper">
+          <div class="album-content-image">
+            <img
+              src="/src/images/content.webp"
+              alt="album cover"
+              width="800"
+              height="450"
+              loading="lazy"
+            />
+            <button class="button-large-gradient">Order Sacramental</button>
+            <button class="button-large-gradient">Stream Sacramental</button>
+            <button class="button-large-gradient">Read the lyrics</button>
+          </div>
+          <div class="album-content-text">
+            <header>
+              <img
+                src="/src/images/logo-band-v2.png"
+                width="800"
+                height="450"
+                loading="lazy"
+              />
+              <h2 class="section-heading">Sacramental</h2>
+            </header>
+            <ul>
+              <li>Blood Rites</li>
+              <li>Malleus Maleficarum</li>
+              <li>Dagger Moon</li>
+              <li>Castle Death</li>
+              <li>Orb Of Dominion</li>
+              <li>Brother Of Serpents</li>
+              <li>Send The Raven</li>
+              <li>Sacramental</li>
+              <li>Marija Magdalena</li>
+              <li>Moon Worshipping Cult</li>
+            </ul>
+
+            <button class="button-large-gradient">Press kit</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="about-biography" data-index="1">
+        <div class="about-biography-wrapper">
+          <div class="about-biography-image">
+            <img src="/src/images/Full-band05.webp" alt="" srcset="" />
+          </div>
+
+          <div class="about-biography-text">
+            <header><h2 class="section-heading">Biography</h2></header>
+            <p>
+              The Countess was formed in February 2017 by keyboardist Bruno
+              Delonga, vocalist Marija Marković and guitar player Marko Bešlić.
+              After numerous changes of line-up in search of bass guitarist and
+              drummer, in 2018 Martin Botica joins them as bass guitarist and
+              Petar Radović takes place as drummer.
+            </p>
+            <p>
+              The Countess combines elements of doom, gothic, heavy and folk
+              metal influenced by bands as Theatre Of Tragedy, Candlemass,
+              Summoning, Embrio and fantasy and gothic literature and
+              iconography as well.
+            </p>
+            <p>
+              The band is currently finishing up their first full-lenght release
+              which will feature 9 new songs, new logo, album cover and whole
+              new artwork. Release date is set in 2021 so stay tuned.
+            </p>
+          </div>
+        </div>
+        <div class="swiper-container band-members">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <article class="band-card">
+                <img
+                  data-src="/src/images/Vocals.jpeg"
+                  alt="singer"
+                  class="swiper-lazy"
+                />
+
+                <div class="band-card__name">
+                  <span>Marija Marković</span>
+                  <span>Vocals</span>
+                </div>
+              </article>
+            </div>
+
+            <div class="swiper-slide">
+              <article class="band-card">
+                <img
+                  data-src="/src/images/Keyboards.jpeg"
+                  alt="keyboard player"
+                  class="swiper-lazy"
+                />
+
+                <div class="band-card__name">
+                  <span>Bruno Delonga</span> <span>Keyboards</span>
+                </div>
+              </article>
+            </div>
+
+            <div class="swiper-slide">
+              <article class="band-card">
+                <img
+                  data-src="/src/images/Guitar.jpeg"
+                  alt="guitarist"
+                  class="swiper-lazy"
+                />
+
+                <div class="band-card__name">
+                  <span>Marko Bešlić</span> <span>Guitar</span>
+                </div>
+              </article>
+            </div>
+
+            <div class="swiper-slide">
+              <article class="band-card">
+                <img
+                  data-src="/src/images/Bass.jpeg"
+                  alt="guitarist"
+                  class="swiper-lazy"
+                />
+
+                <div class="band-card__name">
+                  <span>Martin Botica</span> <span>Bass</span>
+                </div>
+              </article>
+            </div>
+
+            <div class="swiper-slide">
+              <article class="band-card">
+                <img
+                  data-src="/src/images/Drums.jpeg"
+                  alt="drummer"
+                  class="swiper-lazy"
+                />
+
+                <div class="band-card__name">
+                  <span>Petar Radović</span> <span>Drums</span>
+                </div>
+              </article>
+            </div>
+          </div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+      </section>
+
+      <section class="gallery-section" data-index="2">
+        <div class="swiper-container gallery">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img
+                data-src="src/images/Full-band03.webp"
+                alt="band members image"
+                class="swiper-lazy"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                data-src="src/images/Full-band02.webp"
+                alt="band members image"
+                class="swiper-lazy"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                data-src="src/images/Full-band01.webp"
+                alt="band members image"
+                class="swiper-lazy"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                data-src="src/images/band-video-1.webp"
+                alt="band members image"
+                class="swiper-lazy"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                data-src="src/images/band-video-2.webp"
+                alt="band members image"
+                class="swiper-lazy"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                data-src="src/images/band-video-3.webp"
+                alt="band members image"
+                class="swiper-lazy"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                data-src="src/images/band-video-4.webp"
+                alt="band members image"
+                class="swiper-lazy"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                data-src="src/images/Full-band05.webp"
+                class="swiper-lazy"
+                alt="band members image"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                data-src="src/images/Full-band04.webp"
+                class="swiper-lazy"
+                alt="band members image"
+              />
+            </div>
+          </div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+      </section>
+
+      <section class="merch-section" data-index="3">
+        <header>
+          <h2 class="section-heading">Merch</h2>
+        </header>
+        <div class="swiper-container merch">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <article class="merch-wrapper__card">
+                <img
+                  data-src="/src/images/cd-band.jpg"
+                  alt="picture of a cd"
+                  class="swiper-lazy"
+                  width="800"
+                  height="450"
+                />
+                <div class="merch-wrapper__card--info">
+                  <header>
+                    <h2>CD</h2>
+                    <p>Price: 99kn</p>
+                  </header>
+                  <button class="button-large-gradient">Order</button>
+                </div>
+              </article>
+            </div>
+            <div class="swiper-slide">
+              <article class="merch-wrapper__card">
+                <img
+                  data-src="/src/images/hoodie-band.jpg"
+                  alt="picture of a hoodie"
+                  width="800"
+                  height="450"
+                  class="swiper-lazy"
+                />
+
+                <div class="merch-wrapper__card--info">
+                  <header>
+                    <h2>Hoodie</h2>
+                    <p>Price: 99kn</p>
+                  </header>
+                  <button class="button-large-gradient">Order</button>
+                </div>
+              </article>
+            </div>
+            <div class="swiper-slide">
+              <article class="merch-wrapper__card">
+                <img
+                  data-src="/src/images/t-shirt-band.jpg"
+                  alt="picture of a hoodie"
+                  class="swiper-lazy"
+                  width="800"
+                  height="450"
+                />
+                <div class="merch-wrapper__card--info">
+                  <header>
+                    <h2>T-shirt</h2>
+                    <p>Price: 99kn</p>
+                  </header>
+                  <button class="button-large-gradient">Order</button>
+                </div>
+              </article>
+            </div>
+          </div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+      </section>
+
+      <section class="facebook-group">
+        <img
+          src="./src/images/fb-cover.webp"
+          alt="full band photo"
+          class="facebook-image"
+          width="800"
+          height="450"
+          loading="lazy"
+        />
+        <div class="facebook-overlay">
+          <header>
+            <h2 class="section-heading">Follow us</h2>
+            <p>
+              Join us on Facebook to access our community and stay up to date
+              with the latest news! Tap on the image to see the live video 🤫
+            </p>
+          </header>
+
+          <a href="https://www.facebook.com/thecountessband/"
+            ><button>Join</button></a
+          >
+        </div>
+      </section>
+      <section class="contact" data-index="4">
+        <header><h2 class="section-heading">Booking inquiries</h2></header>
+        <div class="contact-text">
+          <div class="contact-phone">
+            <a href="tel:+385989931356">
+              <i class="fas fa-phone"></i> +385 98 993 1356 - Marija</a
+            >
+          </div>
+          <div class="contact-email">
+            <a href="mailto:thecountessband@gmail.com"
+              ><i class="far fa-envelope"></i> thecountessband@gmail.com</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <img
+        class="band-logo"
+        src="./src/images/logo-band-v2.png"
+        alt="band logo"
+        loading="lazy"
+      />
+      <div class="icons-stack">
+        <a href="https://www.instagram.com/thecountessband/">
+          <i class="fab fa-instagram fa-2x"></i>
+        </a>
+
+        <a href="https://www.facebook.com/thecountessband/"
+          ><i class="fab fa-facebook fa-2x"></i
+        ></a>
+
+        <a
+          href="https://www.youtube.com/channel/UCDJ8oxcW1behNPwEvNiuX2g/featured"
+          ><i class="fab fa-youtube fa-2x"></i
+        ></a>
+
+        <a href=""><i class="fab fa-spotify fa-2x"></i></a>
+
+        <a href=""><i class="fab fa-bandcamp fa-2x"></i></a>
+
+        <a href="mailto:thecountessband@gmail.com"
+          ><i class="far fa-envelope fa-2x"></i>
+        </a>
+      </div>
+
+      <div class="signiature">
+        <p>
+          <a href="mailto:thecountessband@gmail.com"
+            >thecountessband@gmail.com</a
+          >
+        </p>
+        <p>&copy; The Countess 2021</p>
+      </div>
+    </footer>
+    <script
+      src="https://kit.fontawesome.com/8a86f7e73f.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/swiper@6/swiper-bundle.min.js"></script>
+    <script src="countess.js"></script>
+  </body>
+</html>

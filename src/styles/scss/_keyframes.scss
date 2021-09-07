@@ -1,0 +1,49 @@
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes toLeft {
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes toRight {
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes borderAnimation {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes borderBlur {
+  0% {
+    background: #fa448c;
+    filter: blur(0.05em);
+  }
+
+  50% {
+    background: #fec859;
+    filter: blur(0.05em);
+  }
+
+  75% {
+    background: #43b5a0;
+    filter: blur(0.05em);
+  }
+
+  100% {
+    background: #491d88;
+    filter: blur(0.05em);
+  }
+}
