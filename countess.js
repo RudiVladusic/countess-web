@@ -111,7 +111,7 @@ const swiper = new Swiper(".gallery", {
 });
 
 const bandSwiper = new Swiper(".band-members", {
-  spaceBetween: 20,
+  spaceBetween: 40,
   grabCursor: true,
   preloadImages: false,
   lazy: true,
@@ -216,7 +216,7 @@ const textObserverGroup = document.querySelectorAll(
 );
 
 const opacityObserverGroup = document.querySelectorAll(
-  ".album-content-image, .facebook-group, .contact"
+  ".album-content-image, .facebook-group, .contact header"
 );
 
 const sectionsObserverGroup = document.querySelectorAll(

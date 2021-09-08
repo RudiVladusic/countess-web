@@ -14,28 +14,31 @@
 
 html {
   line-height: 1.6;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat", sans-serif, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
   scroll-behavior: smooth;
   scrollbar-color: $purple $black;
   scrollbar-width: thin;
   background: $black;
-
   height: 100%;
 }
 
 body {
   height: 100%;
+  min-height: 100vh;
+  width: 100%;
   overflow-x: hidden;
-  position: relative;
+  position: relative !important;
   &::before {
     content: "";
+    width: 100%;
+    height: 100%;
     position: fixed;
     inset: 0;
     z-index: -1;
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-      url("/src/images/body-bg.webp") no-repeat center center/cover;
+      url("/src/images/body-bg-alt.webp") no-repeat center center/cover;
   }
 }
 
@@ -83,12 +86,9 @@ img {
 
 .video-container {
   overflow: hidden;
-  padding-bottom: calc(1 / 2 * 100%);
   height: 0;
   position: relative;
-
   margin: 0 auto;
-
   width: 90%;
   padding-bottom: calc(1 / 2 * 90%);
 
@@ -136,12 +136,11 @@ nav {
 }
 
 .band-logo {
-  width: 15em;
-  height: auto;
+  width: 8em;
   object-fit: contain;
 
-  @media (max-width: 768px) {
-    width: 10em;
+  @media (min-width: 1200px) {
+    width: 12em;
   }
 }
 
@@ -159,9 +158,6 @@ nav {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  margin: 0 auto;
-  height: min-content;
-
   background: $black;
   color: $white;
 
@@ -178,23 +174,12 @@ nav {
       text-transform: lowercase;
       font-size: inherit;
       transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      padding: 0.5em 0;
       &:hover {
         cursor: pointer;
         color: $rose;
       }
     }
   }
-
-  img {
-    object-fit: contain;
-    width: 7em;
-    cursor: pointer;
-  }
-}
-
-.fade-in {
-  animation: fadeIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
 }
 
 .burger {
@@ -208,8 +193,6 @@ nav {
     background: $white !important;
     transition: opacity 0.75s cubic-bezier(0.175, 0.885, 0.32, 1.275),
       transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    position: relative;
-    border-radius: 1em;
   }
 
   :nth-child(2) {
@@ -232,12 +215,7 @@ nav {
   flex-direction: column;
   justify-content: space-evenly;
   place-items: center;
-  padding: 3em 0;
-
-  img {
-    width: 10em;
-    object-fit: contain;
-  }
+  padding: 2em 0;
 
   .mobile-nav-links {
     display: flex;
@@ -280,11 +258,6 @@ nav {
     :nth-child(5) {
       opacity: 0;
       animation-delay: 0.65s;
-    }
-
-    :nth-child(6) {
-      opacity: 0;
-      animation-delay: 0.75s;
     }
   }
 
@@ -337,8 +310,7 @@ nav {
   display: flex;
   flex-direction: column;
   gap: 10em;
-  position: relative;
-
+  padding: 10em 0;
   @media (min-width: 160em) {
     margin: 0 18%;
   }
@@ -348,7 +320,6 @@ nav {
   min-height: $baselineElements;
   height: 100%;
   line-height: 1;
-  position: relative !important;
   overflow: hidden;
 }
 
@@ -373,13 +344,13 @@ nav {
   }
 
   .landing-wrapper__overlay {
-    background: #000;
-    padding: 1.5em;
+    background: $black;
+    padding: 1em;
     height: auto;
     box-shadow: 0 0 0.25em $black;
     position: absolute;
     left: 0;
-    bottom: 10%;
+    bottom: 15%;
     z-index: 1;
     display: flex;
     flex-direction: column;
@@ -387,12 +358,7 @@ nav {
     justify-content: space-between;
     max-width: 40em;
 
-    a {
-      place-self: flex-start;
-    }
-
     @media (min-width: 1400px) {
-      bottom: 15%;
       left: 5%;
     }
 
@@ -480,32 +446,10 @@ nav {
   width: 10em;
   display: flex;
   justify-content: space-between;
-  text-align: center;
 
   a {
     text-decoration: none;
-    place-self: center !important;
-  }
-
-  .landing-icon-container {
-    display: flex;
-    place-items: center;
-    justify-content: center;
-    width: 2em;
-    height: 2em;
-    border-radius: 50%;
-    cursor: pointer;
-    padding: 0.5em;
-    background: $white;
-
-    a {
-      color: $black;
-      font-size: 100%;
-    }
-  }
-
-  @media (max-width: 1200px) {
-    margin: 0;
+    color: $white;
   }
 }
 
@@ -539,9 +483,6 @@ nav {
       opacity 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     transform: scale(0.9);
     opacity: 0.1;
-    img {
-      filter: drop-shadow(0 0 0.25em $black);
-    }
   }
 
   .album-content-text {
@@ -550,13 +491,16 @@ nav {
     place-items: center;
     gap: 0.5em;
     flex: 1;
-    background: $black;
-    box-shadow: 0 0 0.25em $black;
+
     ul {
       text-align: center;
       list-style-type: lower-roman;
       font-size: $defaultFontSizeQuery;
       @include font-weight();
+
+      li {
+        padding: 0.25em 0;
+      }
     }
 
     header {
@@ -572,10 +516,9 @@ nav {
   width: 100%;
   position: relative;
   background: $black;
-  min-height: calc(100vh - 10em);
   display: flex;
   flex-direction: column;
-  gap: 2em;
+  gap: 2.5em;
   padding: 2.5em 0;
 
   header {
@@ -600,7 +543,7 @@ nav {
     place-items: start center;
     justify-content: space-between;
     width: 90%;
-    gap: 1em;
+    gap: 2.5em;
     margin: 0 auto;
   }
 
@@ -631,7 +574,6 @@ nav {
 
 .gallery-section {
   width: 90%;
-
   margin: 0 auto;
 
   @media (max-width: 768px) {
@@ -644,43 +586,27 @@ nav {
 }
 
 .band-card {
-  position: relative;
   color: $white;
   height: 22em;
-
+  background: $rose;
+  position: relative;
   img {
-    height: 100%;
-    position: relative;
     object-fit: cover;
     object-position: top center;
-    filter: drop-shadow(0 0 0.25em $black);
-
-    @media (max-width: 768px) {
-      filter: none;
-    }
+    padding: 0.5em;
+    filter: drop-shadow(0em 0em 0.25em $black);
   }
 }
 
 .band-card__name {
-  width: 100%;
   position: absolute;
   bottom: 0;
-  left: 0;
-  height: min-content;
+  width: 100%;
   font-size: $defaultFontSizeQuery;
-  color: $white;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
-  padding: 0.5em 0.25em;
-  place-items: center;
-  background: #202020;
-
-  span {
-    font-size: inherit;
-    @include font-weight();
-    padding: 0.25em;
-  }
+  color: $black;
+  padding: 0.5em 1em;
+  background: $rose;
+  @include font-weight();
 }
 
 .swiper-container {
@@ -693,13 +619,16 @@ nav {
   color: $white !important;
 }
 
+.merch {
+  width: 90%;
+}
+
 .merch-section {
   width: 100%;
   background: $black;
   color: $white;
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
 
   header {
     text-align: center;
@@ -710,8 +639,9 @@ nav {
     display: grid;
     place-items: center;
     grid-template-columns: repeat(1, 1fr);
-
+    background: #202020;
     img {
+      padding: 1em;
       height: 15em;
       object-fit: top;
       @media (min-width: 1200px) {
@@ -721,17 +651,16 @@ nav {
     .merch-wrapper__card--info {
       color: $white;
       width: 100%;
-      padding: 0 0.5em;
       display: grid;
       grid-template-columns: repeat(1, 1fr);
-      padding: 0.5em;
-      background: #202020;
+      padding: 0 1em 1em 1em;
+      gap: 1em;
+
       header {
         display: flex;
         flex-flow: row wrap;
         place-items: center;
         justify-content: space-between;
-        padding: 0 0 0.5em 0;
         z-index: 1;
         font-size: $defaultFontSizeQuery;
         @include font-weight();
@@ -824,34 +753,23 @@ nav {
 }
 
 .contact {
-  min-height: calc(100vh - 10em);
   display: grid;
+  height: $baselineElements;
   grid-template-columns: repeat(1, 1fr);
   place-items: center;
   padding: 0 0 2.5em 0;
   position: relative;
-  isolation: isolate;
   width: 100%;
-  transform: scale(0.9);
-  opacity: 0.1;
-  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275),
-    opacity 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-
-  &::before {
-    content: "";
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-      url("/src/images/contact-bg.webp") no-repeat center bottom/cover;
-  }
+  overflow: hidden;
+  background: $black;
 
   header {
+    transform: scale(0.9);
+    opacity: 0.1;
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+      opacity 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     h2 {
       font-size: $desktopLargeHeaderQuery;
-      color: $white;
       text-align: center;
       text-shadow: 0.05em 0.05em 0.05em $black;
     }
@@ -1051,6 +969,10 @@ footer {
   @include header-defaults();
 }
 
+.fade-in {
+  animation: fadeIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
 .button-large-gradient {
   border: none;
   outline: none;
@@ -1065,6 +987,11 @@ footer {
   &:hover {
     transform: scale(0.95);
   }
+}
+
+img[alt*="band"] {
+  color: $white !important;
+  background: $black !important;
 }
 
 // helper classes

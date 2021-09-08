@@ -1,11 +1,11 @@
 # The Countess
 
 This is a website for local band. Work in progress.
-Still waiting for more images, album artwork as well as Youtube upload of new songs.
+Still waiting for original images, album artwork and full press kit.
 
 ## Tech used
 
-HTML/CSS, vanilla JS, Font Awesome icons, Swiper JS.
+HTML/CSS (Sass), JavaScript, Font Awesome icons, Swiper JS.
 
 ## Live
 
@@ -14,6 +14,5 @@ HTML/CSS, vanilla JS, Font Awesome icons, Swiper JS.
 ## Todo
 
 - Finish styling + few more subtle animations
-- Finish cards section
-- Replace all placeholder images with provided ones
-- Optimize images for web
+- Replace all placeholder images with originals / when i get them
+- Create "lyrics" and "press kit" subpages

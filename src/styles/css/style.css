@@ -115,8 +115,7 @@
 
 html {
   line-height: 1.6;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat", sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   scroll-behavior: smooth;
   scrollbar-color: #6a2ecd #010006;
   scrollbar-width: thin;
@@ -126,17 +125,21 @@ html {
 
 body {
   height: 100%;
+  min-height: 100vh;
+  width: 100%;
   overflow-x: hidden;
-  position: relative;
+  position: relative !important;
 }
 
 body::before {
   content: "";
+  width: 100%;
+  height: 100%;
   position: fixed;
   inset: 0;
   z-index: -1;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url("/src/images/body-bg.webp") no-repeat center center/cover;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/src/images/body-bg.webp") no-repeat center center/cover;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url("/src/images/body-bg-alt.webp") no-repeat center center/cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/src/images/body-bg-alt.webp") no-repeat center center/cover;
 }
 
 img {
@@ -187,7 +190,6 @@ img {
 
 .video-container {
   overflow: hidden;
-  padding-bottom: calc(1 / 2 * 100%);
   height: 0;
   position: relative;
   margin: 0 auto;
@@ -249,15 +251,14 @@ nav {
 }
 
 .band-logo {
-  width: 15em;
-  height: auto;
+  width: 8em;
   -o-object-fit: contain;
      object-fit: contain;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 1200px) {
   .band-logo {
-    width: 10em;
+    width: 12em;
   }
 }
 
@@ -285,10 +286,6 @@ nav {
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
-  margin: 0 auto;
-  height: -webkit-min-content;
-  height: -moz-min-content;
-  height: min-content;
   background: #010006;
   color: #ededed;
 }
@@ -312,24 +309,11 @@ nav {
   font-size: inherit;
   -webkit-transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  padding: 0.5em 0;
 }
 
 .desktop-nav .desktop-nav__links--group a:hover {
   cursor: pointer;
   color: #c8baaa;
-}
-
-.desktop-nav img {
-  -o-object-fit: contain;
-     object-fit: contain;
-  width: 7em;
-  cursor: pointer;
-}
-
-.fade-in {
-  -webkit-animation: fadeIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
-          animation: fadeIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
 }
 
 .burger {
@@ -346,8 +330,6 @@ nav {
   transition: opacity 0.75s cubic-bezier(0.175, 0.885, 0.32, 1.275), -webkit-transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   transition: opacity 0.75s cubic-bezier(0.175, 0.885, 0.32, 1.275), transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   transition: opacity 0.75s cubic-bezier(0.175, 0.885, 0.32, 1.275), transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), -webkit-transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  position: relative;
-  border-radius: 1em;
 }
 
 .burger :nth-child(2) {
@@ -378,13 +360,7 @@ nav {
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
   place-items: center;
-  padding: 3em 0;
-}
-
-.mobile-nav img {
-  width: 10em;
-  -o-object-fit: contain;
-     object-fit: contain;
+  padding: 2em 0;
 }
 
 .mobile-nav .mobile-nav-links {
@@ -439,12 +415,6 @@ nav {
   opacity: 0;
   -webkit-animation-delay: 0.65s;
           animation-delay: 0.65s;
-}
-
-.mobile-nav .mobile-nav-links :nth-child(6) {
-  opacity: 0;
-  -webkit-animation-delay: 0.75s;
-          animation-delay: 0.75s;
 }
 
 .mobile-nav .mobile-nav-info {
@@ -512,7 +482,7 @@ nav {
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 10em;
-  position: relative;
+  padding: 10em 0;
 }
 
 @media (min-width: 160em) {
@@ -525,7 +495,6 @@ nav {
   min-height: 37.5em;
   height: 100%;
   line-height: 1;
-  position: relative !important;
   overflow: hidden;
 }
 
@@ -550,14 +519,14 @@ nav {
 }
 
 .landing-wrapper .landing-wrapper__overlay {
-  background: #000;
-  padding: 1.5em;
+  background: #010006;
+  padding: 1em;
   height: auto;
   -webkit-box-shadow: 0 0 0.25em #010006;
           box-shadow: 0 0 0.25em #010006;
   position: absolute;
   left: 0;
-  bottom: 10%;
+  bottom: 15%;
   z-index: 1;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -573,13 +542,8 @@ nav {
   max-width: 40em;
 }
 
-.landing-wrapper .landing-wrapper__overlay a {
-  place-self: flex-start;
-}
-
 @media (min-width: 1400px) {
   .landing-wrapper .landing-wrapper__overlay {
-    bottom: 15%;
     left: 5%;
   }
 }
@@ -722,39 +686,11 @@ nav {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  text-align: center;
 }
 
 .landing-icons a {
   text-decoration: none;
-  place-self: center !important;
-}
-
-.landing-icons .landing-icon-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  place-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  width: 2em;
-  height: 2em;
-  border-radius: 50%;
-  cursor: pointer;
-  padding: 0.5em;
-  background: #ededed;
-}
-
-.landing-icons .landing-icon-container a {
-  color: #010006;
-  font-size: 100%;
-}
-
-@media (max-width: 1200px) {
-  .landing-icons {
-    margin: 0;
-  }
+  color: #ededed;
 }
 
 .album-content {
@@ -809,11 +745,6 @@ nav {
   opacity: 0.1;
 }
 
-.album-content .album-content-image img {
-  -webkit-filter: drop-shadow(0 0 0.25em #010006);
-          filter: drop-shadow(0 0 0.25em #010006);
-}
-
 .album-content .album-content-text {
   color: #ededed;
   display: -ms-grid;
@@ -823,9 +754,6 @@ nav {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  background: #010006;
-  -webkit-box-shadow: 0 0 0.25em #010006;
-          box-shadow: 0 0 0.25em #010006;
 }
 
 .album-content .album-content-text ul {
@@ -841,6 +769,10 @@ nav {
   }
 }
 
+.album-content .album-content-text ul li {
+  padding: 0.25em 0;
+}
+
 .album-content .album-content-text header {
   text-align: center;
 }
@@ -853,7 +785,6 @@ nav {
   width: 100%;
   position: relative;
   background: #010006;
-  min-height: calc(100vh - 10em);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -861,7 +792,7 @@ nav {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 2em;
+  gap: 2.5em;
   padding: 2.5em 0;
 }
 
@@ -897,7 +828,7 @@ nav {
       -ms-flex-pack: justify;
           justify-content: space-between;
   width: 90%;
-  gap: 1em;
+  gap: 2.5em;
   margin: 0 auto;
 }
 
@@ -958,62 +889,35 @@ nav {
 }
 
 .band-card {
-  position: relative;
   color: #ededed;
   height: 22em;
+  background: #c8baaa;
+  position: relative;
 }
 
 .band-card img {
-  height: 100%;
-  position: relative;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: top center;
      object-position: top center;
-  -webkit-filter: drop-shadow(0 0 0.25em #010006);
-          filter: drop-shadow(0 0 0.25em #010006);
-}
-
-@media (max-width: 768px) {
-  .band-card img {
-    -webkit-filter: none;
-            filter: none;
-  }
+  padding: 0.5em;
+  -webkit-filter: drop-shadow(0em 0em 0.25em #010006);
+          filter: drop-shadow(0em 0em 0.25em #010006);
 }
 
 .band-card__name {
-  width: 100%;
   position: absolute;
   bottom: 0;
-  left: 0;
-  height: -webkit-min-content;
-  height: -moz-min-content;
-  height: min-content;
+  width: 100%;
   font-size: clamp(0.85em, 1.2em, 2vw);
-  color: #ededed;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  padding: 0.5em 0.25em;
-  place-items: center;
-  background: #202020;
-}
-
-.band-card__name span {
-  font-size: inherit;
+  color: #010006;
+  padding: 0.5em 1em;
+  background: #c8baaa;
   font-weight: 200;
-  padding: 0.25em;
 }
 
 @media (min-width: 1200px) {
-  .band-card__name span {
+  .band-card__name {
     font-weight: 400;
   }
 }
@@ -1028,6 +932,10 @@ nav {
   color: #ededed !important;
 }
 
+.merch {
+  width: 90%;
+}
+
 .merch-section {
   width: 100%;
   background: #010006;
@@ -1039,7 +947,6 @@ nav {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin: 0 auto;
 }
 
 .merch-section header {
@@ -1053,9 +960,11 @@ nav {
   place-items: center;
   -ms-grid-columns: (1fr)[1];
       grid-template-columns: repeat(1, 1fr);
+  background: #202020;
 }
 
 .merch-section .merch-wrapper__card img {
+  padding: 1em;
   height: 15em;
   -o-object-fit: top;
      object-fit: top;
@@ -1070,13 +979,12 @@ nav {
 .merch-section .merch-wrapper__card .merch-wrapper__card--info {
   color: #ededed;
   width: 100%;
-  padding: 0 0.5em;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[1];
       grid-template-columns: repeat(1, 1fr);
-  padding: 0.5em;
-  background: #202020;
+  padding: 0 1em 1em 1em;
+  gap: 1em;
 }
 
 .merch-section .merch-wrapper__card .merch-wrapper__card--info header {
@@ -1091,7 +999,6 @@ nav {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 0 0 0.5em 0;
   z-index: 1;
   font-size: clamp(0.85em, 1.2em, 2vw);
   font-weight: 200;
@@ -1251,16 +1158,20 @@ nav {
 }
 
 .contact {
-  min-height: calc(100vh - 10em);
   display: -ms-grid;
   display: grid;
+  height: 37.5em;
   -ms-grid-columns: (1fr)[1];
       grid-template-columns: repeat(1, 1fr);
   place-items: center;
   padding: 0 0 2.5em 0;
   position: relative;
-  isolation: isolate;
   width: 100%;
+  overflow: hidden;
+  background: #010006;
+}
+
+.contact header {
   -webkit-transform: scale(0.9);
           transform: scale(0.9);
   opacity: 0.1;
@@ -1270,20 +1181,8 @@ nav {
   transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), -webkit-transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.contact::before {
-  content: "";
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url("/src/images/contact-bg.webp") no-repeat center bottom/cover;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/src/images/contact-bg.webp") no-repeat center bottom/cover;
-}
-
 .contact header h2 {
   font-size: clamp(2em, 4em, 10vw);
-  color: #ededed;
   text-align: center;
   text-shadow: 0.05em 0.05em 0.05em #010006;
 }
@@ -1502,6 +1401,11 @@ footer .signiature a {
   color: #9f64d8;
 }
 
+.fade-in {
+  -webkit-animation: fadeIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+          animation: fadeIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
 .button-large-gradient {
   border: none;
   outline: none;
@@ -1522,4 +1426,9 @@ footer .signiature a {
 .button-large-gradient:hover {
   -webkit-transform: scale(0.95);
           transform: scale(0.95);
+}
+
+img[alt*="band"] {
+  color: #ededed !important;
+  background: #010006 !important;
 }
