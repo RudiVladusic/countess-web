@@ -58,47 +58,31 @@
 
 @-webkit-keyframes borderBlur {
   0% {
-    background: #fa448c;
-    -webkit-filter: blur(0.05em);
-            filter: blur(0.05em);
+    background: #e2ae6c;
   }
   50% {
-    background: #fec859;
-    -webkit-filter: blur(0.05em);
-            filter: blur(0.05em);
+    background: #9f64d8;
   }
   75% {
-    background: #43b5a0;
-    -webkit-filter: blur(0.05em);
-            filter: blur(0.05em);
+    background: #000077;
   }
   100% {
-    background: #491d88;
-    -webkit-filter: blur(0.05em);
-            filter: blur(0.05em);
+    background: #ededed;
   }
 }
 
 @keyframes borderBlur {
   0% {
-    background: #fa448c;
-    -webkit-filter: blur(0.05em);
-            filter: blur(0.05em);
+    background: #e2ae6c;
   }
   50% {
-    background: #fec859;
-    -webkit-filter: blur(0.05em);
-            filter: blur(0.05em);
+    background: #9f64d8;
   }
   75% {
-    background: #43b5a0;
-    -webkit-filter: blur(0.05em);
-            filter: blur(0.05em);
+    background: #000077;
   }
   100% {
-    background: #491d88;
-    -webkit-filter: blur(0.05em);
-            filter: blur(0.05em);
+    background: #ededed;
   }
 }
 
@@ -221,45 +205,10 @@ nav {
   }
 }
 
-.nav-logo {
-  height: auto;
-  width: 5em;
-  position: absolute;
-  z-index: 5;
-  top: 8vh;
-  left: 0.5em;
-  -webkit-transition: opacity 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  transition: opacity 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-@media (min-width: 1200px) {
-  .nav-logo {
-    width: 10em;
-  }
-}
-
-@media (min-width: 1400px) {
-  .nav-logo {
-    width: 15em;
-  }
-}
-
-@media (max-width: 768px) {
-  .nav-logo {
-    display: none;
-  }
-}
-
 .band-logo {
   width: 8em;
   -o-object-fit: contain;
      object-fit: contain;
-}
-
-@media (min-width: 1200px) {
-  .band-logo {
-    width: 12em;
-  }
 }
 
 .navbar-wrapper {
@@ -302,6 +251,12 @@ nav {
   display: flex;
   gap: 1em;
   place-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
 }
 
 .desktop-nav .desktop-nav__links--group a {
@@ -309,11 +264,18 @@ nav {
   font-size: inherit;
   -webkit-transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  font-size: clamp(1em, 1vw, 3em);
 }
 
 .desktop-nav .desktop-nav__links--group a:hover {
   cursor: pointer;
   color: #c8baaa;
+}
+
+.desktop-nav :nth-child(1) {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
 }
 
 .burger {
@@ -360,7 +322,7 @@ nav {
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
   place-items: center;
-  padding: 2em 0;
+  padding: 1em 0;
 }
 
 .mobile-nav .mobile-nav-links {
@@ -369,22 +331,20 @@ nav {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-flow: column wrap;
-          flex-flow: column wrap;
+      -ms-flex-direction: column;
+          flex-direction: column;
   place-items: center;
-  gap: 0.5em;
+  gap: 2em;
   width: 100%;
   padding: 0.5em;
-  font-size: clamp(1em, 1.5em, 3vw);
 }
 
 .mobile-nav .mobile-nav-links a {
   text-decoration: none;
-  text-transform: uppercase;
+  text-transform: lowercase;
   cursor: pointer;
-  padding: 1em 0.75em;
   color: #ededed;
-  font-size: clamp(0.85em, 1.2em, 2vw);
+  font-size: clamp(1em, 1vw, 3em);
 }
 
 .mobile-nav .mobile-nav-links :nth-child(1) {
@@ -426,7 +386,7 @@ nav {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  font-size: clamp(0.85em, 1.2em, 2vw);
+  font-size: clamp(1em, 1vw, 3em);
 }
 
 .mobile-nav .mobile-nav-info a {
@@ -439,7 +399,7 @@ nav {
 
 .mobile-nav .mobile-nav-signiature {
   text-align: center;
-  font-size: clamp(0.85em, 1.2em, 2vw);
+  font-size: clamp(1em, 1vw, 3em);
   color: #ededed;
 }
 
@@ -486,8 +446,10 @@ nav {
 }
 
 @media (min-width: 160em) {
-  .main-content-wrapper {
-    margin: 0 18%;
+  .main-content-wrapper,
+  .landing,
+  .desktop-nav {
+    margin: 0 15% !important;
   }
 }
 
@@ -539,7 +501,7 @@ nav {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  max-width: 40em;
+  max-width: 60ch;
 }
 
 @media (min-width: 1400px) {
@@ -561,10 +523,11 @@ nav {
 }
 
 .landing-wrapper .landing-wrapper__overlay header h2 {
+  text-align: left;
   color: #ededed;
   position: relative;
   overflow: hidden;
-  font-size: clamp(2em, 4em, 10vw);
+  font-size: clamp(1.75em, 2.5vw, 8em);
 }
 
 .landing-wrapper .landing-wrapper__overlay header h2::before {
@@ -585,6 +548,7 @@ nav {
   font-style: italic;
   position: relative;
   overflow: hidden;
+  font-size: clamp(1.5em, 2vw, 6em);
 }
 
 @media (min-width: 1200px) {
@@ -603,44 +567,6 @@ nav {
   background: #010006;
   -webkit-animation: toRight 1s forwards 1s ease-in;
           animation: toRight 1s forwards 1s ease-in;
-}
-
-.landing-wrapper .landing-wrapper__overlay header button {
-  padding: 1em 1.5em;
-  border: none;
-  text-transform: uppercase;
-  font-family: inherit;
-  color: #ededed;
-  font-weight: bold;
-  cursor: pointer;
-  background: transparent;
-  outline: 5px double #c8baaa;
-  outline-offset: -5px;
-  letter-spacing: 0.025em;
-  -webkit-transition: all 0.25s ease-in-out;
-  transition: all 0.25s ease-in-out;
-  font-size: inherit;
-  place-self: start;
-}
-
-.landing-wrapper .landing-wrapper__overlay header button a {
-  text-decoration: none;
-  color: inherit;
-}
-
-.landing-wrapper .landing-wrapper__overlay header button:hover {
-  outline: thick double #c8baaa;
-  outline-offset: 0;
-}
-
-.landing-wrapper .landing-wrapper__overlay header button:hover i {
-  -webkit-transition: -webkit-transform 250ms ease-in-out;
-  transition: -webkit-transform 250ms ease-in-out;
-  transition: transform 250ms ease-in-out;
-  transition: transform 250ms ease-in-out, -webkit-transform 250ms ease-in-out;
-  -webkit-transform: rotate(360deg);
-          transform: rotate(360deg);
-  color: #c8baaa;
 }
 
 .landing-wrapper .landing-wrapper__img {
@@ -759,7 +685,7 @@ nav {
 .album-content .album-content-text ul {
   text-align: center;
   list-style-type: lower-roman;
-  font-size: clamp(0.85em, 1.2em, 2vw);
+  font-size: clamp(1em, 1vw, 3em);
   font-weight: 200;
 }
 
@@ -770,15 +696,12 @@ nav {
 }
 
 .album-content .album-content-text ul li {
-  padding: 0.25em 0;
+  padding: 0.15em;
 }
 
-.album-content .album-content-text header {
-  text-align: center;
-}
-
-.album-content .album-content-text header h2 {
-  font-size: clamp(1.5em, 2.5em, 6vw);
+.album-content .album-content-text ul li::marker {
+  color: #9f64d8;
+  text-transform: uppercase;
 }
 
 .about-biography {
@@ -794,25 +717,6 @@ nav {
           flex-direction: column;
   gap: 2.5em;
   padding: 2.5em 0;
-}
-
-.about-biography header {
-  padding: 0 0.5em;
-  place-self: start;
-}
-
-.about-biography header h2 {
-  font-size: clamp(1.5em, 2.5em, 6vw);
-}
-
-.about-biography header::after {
-  content: "";
-  width: 0;
-  background: #c8baaa;
-  height: 0.1em;
-  display: block;
-  -webkit-animation: borderAnimation 2s forwards 1s;
-          animation: borderAnimation 2s forwards 1s;
 }
 
 .about-biography .about-biography-wrapper {
@@ -849,7 +753,7 @@ nav {
 
 .about-biography .about-biography-text p {
   padding: 0.5em;
-  font-size: clamp(0.85em, 1.2em, 2vw);
+  font-size: clamp(1em, 1vw, 3em);
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
   font-weight: 200;
@@ -860,6 +764,11 @@ nav {
   .about-biography .about-biography-text p {
     font-weight: 400;
   }
+}
+
+.about-biography .about-biography-text header {
+  place-self: flex-start;
+  padding: 0 0.5em;
 }
 
 .about-biography .about-biography-image {
@@ -909,9 +818,9 @@ nav {
   position: absolute;
   bottom: 0;
   width: 100%;
-  font-size: clamp(0.85em, 1.2em, 2vw);
+  font-size: clamp(1em, 1vw, 3em);
   color: #010006;
-  padding: 0.5em 1em;
+  padding: 0.25em;
   background: #c8baaa;
   font-weight: 200;
 }
@@ -947,11 +856,7 @@ nav {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-}
-
-.merch-section header {
-  text-align: center;
-  font-size: clamp(1.5em, 2.5em, 6vw);
+  place-items: center;
 }
 
 .merch-section .merch-wrapper__card {
@@ -1000,7 +905,7 @@ nav {
       -ms-flex-pack: justify;
           justify-content: space-between;
   z-index: 1;
-  font-size: clamp(0.85em, 1.2em, 2vw);
+  font-size: clamp(1em, 1vw, 3em);
   font-weight: 200;
 }
 
@@ -1074,7 +979,7 @@ nav {
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 1em;
-  padding: 1em;
+  padding: 0 1em 1em 1em;
   opacity: 0;
 }
 
@@ -1088,71 +993,21 @@ nav {
 }
 
 .facebook-group .facebook-overlay header {
-  text-align: left;
+  place-self: flex-start;
 }
 
 .facebook-group .facebook-overlay header h2 {
-  font-size: clamp(1em, 1.5em, 3vw);
+  text-align: left;
 }
 
 .facebook-group .facebook-overlay header p {
   color: #ededed;
-  font-size: clamp(0.85em, 1.2em, 2vw);
   max-width: 40ch;
   font-weight: 200;
 }
 
 @media (min-width: 1200px) {
   .facebook-group .facebook-overlay header p {
-    font-weight: 400;
-  }
-}
-
-.facebook-group .facebook-overlay a {
-  place-self: flex-start;
-}
-
-.facebook-group .facebook-overlay button {
-  place-self: flex-start;
-  padding: 1em 1.5em;
-  border: none;
-  text-transform: uppercase;
-  font-family: inherit;
-  color: #ededed;
-  font-weight: bold;
-  cursor: pointer;
-  background: transparent;
-  outline: 5px double #c8baaa;
-  outline-offset: -5px;
-  letter-spacing: 0.025em;
-  -webkit-transition: all 0.25s ease-in-out;
-  transition: all 0.25s ease-in-out;
-  font-weight: 200;
-  font-size: inherit;
-}
-
-.facebook-group .facebook-overlay button a {
-  text-decoration: none;
-  color: inherit;
-}
-
-.facebook-group .facebook-overlay button:hover {
-  outline: thick double #c8baaa;
-  outline-offset: 0;
-}
-
-.facebook-group .facebook-overlay button:hover i {
-  -webkit-transition: -webkit-transform 250ms ease-in-out;
-  transition: -webkit-transform 250ms ease-in-out;
-  transition: transform 250ms ease-in-out;
-  transition: transform 250ms ease-in-out, -webkit-transform 250ms ease-in-out;
-  -webkit-transform: rotate(360deg);
-          transform: rotate(360deg);
-  color: #c8baaa;
-}
-
-@media (min-width: 1200px) {
-  .facebook-group .facebook-overlay button {
     font-weight: 400;
   }
 }
@@ -1182,7 +1037,7 @@ nav {
 }
 
 .contact header h2 {
-  font-size: clamp(2em, 4em, 10vw);
+  font-size: clamp(1.75em, 2.5vw, 8em);
   text-align: center;
   text-shadow: 0.05em 0.05em 0.05em #010006;
 }
@@ -1210,7 +1065,7 @@ nav {
   position: relative;
   overflow: hidden;
   display: block;
-  font-size: clamp(0.85em, 1.2em, 2vw);
+  font-size: clamp(1em, 1vw, 3em);
   text-shadow: 0.05em 0.05em 0.05em #010006;
   font-weight: 200;
 }
@@ -1335,7 +1190,7 @@ footer .signiature {
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-area: txt;
-  font-size: clamp(0.85em, 1.2em, 2vw);
+  font-size: clamp(1em, 1vw, 3em);
   color: #ededed;
   font-weight: 400;
   text-align: center;
@@ -1370,12 +1225,13 @@ footer .signiature a {
 .underline::after {
   content: "";
   position: absolute;
-  bottom: 15%;
+  bottom: 0;
   left: 0;
-  height: 0.15em;
-  background: #6a2ecd;
-  -webkit-animation: borderAnimation 0.5s ease-in-out forwards, borderBlur 3s ease-in-out infinite alternate;
-          animation: borderAnimation 0.5s ease-in-out forwards, borderBlur 3s ease-in-out infinite alternate;
+  height: 0.2em;
+  -webkit-filter: blur(0.05em);
+          filter: blur(0.05em);
+  -webkit-animation: borderAnimation 0.5s ease-in-out forwards, borderBlur 5s ease infinite alternate;
+          animation: borderAnimation 0.5s ease-in-out forwards, borderBlur 5s ease infinite alternate;
 }
 
 .display-none {
@@ -1397,8 +1253,9 @@ footer .signiature a {
   font-family: "Crimson Text", serif;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  font-weight: 400;
   color: #9f64d8;
+  font-size: clamp(1.5em, 2vw, 6em);
+  text-align: center;
 }
 
 .fade-in {
@@ -1409,11 +1266,12 @@ footer .signiature a {
 .button-large-gradient {
   border: none;
   outline: none;
-  padding: 2em 1em;
+  padding: 1em 1em;
   cursor: pointer;
   text-transform: uppercase;
-  font-size: clamp(0.85em, 1.2em, 2vw);
+  font-size: clamp(1em, 1vw, 3em);
   place-self: stretch;
+  text-align: center;
   color: #ededed;
   background: -webkit-gradient(linear, left top, right top, from(#971b4c), to(#192942));
   background: linear-gradient(90deg, #971b4c, #192942);
@@ -1426,6 +1284,28 @@ footer .signiature a {
 .button-large-gradient:hover {
   -webkit-transform: scale(0.95);
           transform: scale(0.95);
+}
+
+.overlay-link {
+  place-self: flex-start;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  font-size: inherit;
+  font-family: inherit;
+}
+
+.overlay-link:hover i {
+  -webkit-transition: -webkit-transform 250ms ease-in-out;
+  transition: -webkit-transform 250ms ease-in-out;
+  transition: transform 250ms ease-in-out;
+  transition: transform 250ms ease-in-out, -webkit-transform 250ms ease-in-out;
+  -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+  color: #c8baaa;
+}
+
+.facebook-overlay-link {
+  text-decoration: none;
 }
 
 img[alt*="band"] {

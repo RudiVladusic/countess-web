@@ -1,34 +1,3 @@
-@mixin defaultButtons {
-  padding: 1em 1.5em;
-  border: none;
-  text-transform: uppercase;
-  font-family: inherit;
-  color: $white;
-  font-weight: bold;
-  cursor: pointer;
-  background: transparent;
-  outline: 5px double $rose;
-  outline-offset: -5px;
-  letter-spacing: 0.025em;
-  transition: all 0.25s ease-in-out;
-
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
-
-  &:hover {
-    outline: thick double $rose;
-    outline-offset: 0;
-
-    i {
-      transition: transform 250ms ease-in-out;
-      transform: rotate(360deg);
-      color: $rose;
-    }
-  }
-}
-
 @mixin font-weight {
   font-weight: 200;
 
@@ -41,6 +10,7 @@
   font-family: "Crimson Text", serif;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  font-weight: 400;
   color: $lightPurple;
+  font-size: $desktopHeaderSizeQuery;
+  text-align: center;
 }

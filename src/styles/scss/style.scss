@@ -30,6 +30,7 @@ body {
   width: 100%;
   overflow-x: hidden;
   position: relative !important;
+
   &::before {
     content: "";
     width: 100%;
@@ -113,35 +114,9 @@ nav {
   }
 }
 
-.nav-logo {
-  height: auto;
-  width: 5em;
-  position: absolute;
-  z-index: 5;
-  top: 8vh;
-  left: 0.5em;
-  transition: opacity 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-
-  @media (min-width: 1200px) {
-    width: 10em;
-  }
-
-  @media (min-width: 1400px) {
-    width: 15em;
-  }
-
-  @media (max-width: 768px) {
-    display: none;
-  }
-}
-
 .band-logo {
   width: 8em;
   object-fit: contain;
-
-  @media (min-width: 1200px) {
-    width: 12em;
-  }
 }
 
 .navbar-wrapper {
@@ -169,16 +144,23 @@ nav {
     display: flex;
     gap: 1em;
     place-items: center;
+    justify-content: flex-end;
+    flex: 1;
 
     a {
       text-transform: lowercase;
       font-size: inherit;
       transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      font-size: $defaultFontSizeQuery;
       &:hover {
         cursor: pointer;
         color: $rose;
       }
     }
+  }
+
+  :nth-child(1) {
+    justify-content: flex-start;
   }
 }
 
@@ -215,22 +197,20 @@ nav {
   flex-direction: column;
   justify-content: space-evenly;
   place-items: center;
-  padding: 2em 0;
+  padding: 1em 0;
 
   .mobile-nav-links {
     display: flex;
-    flex-flow: column wrap;
+    flex-direction: column;
     place-items: center;
-    gap: 0.5em;
+    gap: 2em;
     width: 100%;
     padding: 0.5em;
-    font-size: $smallerHeaderSizeQuery;
 
     a {
       text-decoration: none;
-      text-transform: uppercase;
+      text-transform: lowercase;
       cursor: pointer;
-      padding: 1em 0.75em;
       color: $white;
       font-size: $defaultFontSizeQuery;
     }
@@ -311,8 +291,13 @@ nav {
   flex-direction: column;
   gap: 10em;
   padding: 10em 0;
+}
+
+.main-content-wrapper,
+.landing,
+.desktop-nav {
   @media (min-width: 160em) {
-    margin: 0 18%;
+    margin: 0 15% !important;
   }
 }
 
@@ -356,7 +341,7 @@ nav {
     flex-direction: column;
     gap: 1em;
     justify-content: space-between;
-    max-width: 40em;
+    max-width: 60ch;
 
     @media (min-width: 1400px) {
       left: 5%;
@@ -367,11 +352,14 @@ nav {
       display: flex;
       flex-direction: column;
       gap: 1em;
+
       h2 {
+        text-align: left;
         color: $white;
         position: relative;
         overflow: hidden;
         font-size: $desktopLargeHeaderQuery;
+
         &::before {
           content: "";
           position: absolute;
@@ -390,6 +378,7 @@ nav {
         font-style: italic;
         position: relative;
         overflow: hidden;
+        font-size: $desktopHeaderSizeQuery;
         &::before {
           content: "";
           position: absolute;
@@ -400,12 +389,6 @@ nav {
           background: $black;
           animation: toRight 1s forwards 1s ease-in;
         }
-      }
-
-      button {
-        @include defaultButtons();
-        font-size: inherit;
-        place-self: start;
       }
     }
   }
@@ -499,14 +482,12 @@ nav {
       @include font-weight();
 
       li {
-        padding: 0.25em 0;
-      }
-    }
+        padding: 0.15em;
 
-    header {
-      text-align: center;
-      h2 {
-        font-size: $desktopHeaderSizeQuery;
+        &::marker {
+          color: $lightPurple;
+          text-transform: uppercase;
+        }
       }
     }
   }
@@ -520,22 +501,6 @@ nav {
   flex-direction: column;
   gap: 2.5em;
   padding: 2.5em 0;
-
-  header {
-    padding: 0 0.5em;
-    place-self: start;
-    h2 {
-      font-size: $desktopHeaderSizeQuery;
-    }
-    &::after {
-      content: "";
-      width: 0;
-      background: $rose;
-      height: 0.1em;
-      display: block;
-      animation: borderAnimation 2s forwards 1s;
-    }
-  }
 
   .about-biography-wrapper {
     display: flex;
@@ -560,6 +525,11 @@ nav {
       transition: all 0.5s ease-in-out;
       @include font-weight();
       color: $white;
+    }
+
+    header {
+      place-self: flex-start;
+      padding: 0 0.5em;
     }
   }
 
@@ -604,7 +574,7 @@ nav {
   width: 100%;
   font-size: $defaultFontSizeQuery;
   color: $black;
-  padding: 0.5em 1em;
+  padding: 0.25em;
   background: $rose;
   @include font-weight();
 }
@@ -629,11 +599,8 @@ nav {
   color: $white;
   display: flex;
   flex-direction: column;
-
-  header {
-    text-align: center;
-    font-size: $desktopHeaderSizeQuery;
-  }
+  place-items: center;
+  // gap: 1em;
 
   .merch-wrapper__card {
     display: grid;
@@ -714,7 +681,7 @@ nav {
     display: flex;
     flex-direction: column;
     gap: 1em;
-    padding: 1em;
+    padding: 0 1em 1em 1em;
     opacity: 0;
 
     @media (max-width: 768px) {
@@ -725,29 +692,17 @@ nav {
     }
 
     header {
-      text-align: left;
+      place-self: flex-start;
 
       h2 {
-        font-size: $smallerHeaderSizeQuery;
+        text-align: left;
       }
 
       p {
         color: $white;
-        font-size: $defaultFontSizeQuery;
         max-width: 40ch;
         @include font-weight();
       }
-    }
-
-    a {
-      place-self: flex-start;
-    }
-
-    button {
-      place-self: flex-start;
-      @include defaultButtons();
-      @include font-weight();
-      font-size: inherit;
     }
   }
 }
@@ -943,12 +898,12 @@ footer {
   &::after {
     content: "";
     position: absolute;
-    bottom: 15%;
+    bottom: 0;
     left: 0;
-    height: 0.15em;
-    background: $purple;
+    height: 0.2em;
+    filter: blur(0.05em);
     animation: borderAnimation 0.5s ease-in-out forwards,
-      borderBlur 3s ease-in-out infinite alternate;
+      borderBlur 5s ease infinite alternate;
   }
 }
 
@@ -976,17 +931,38 @@ footer {
 .button-large-gradient {
   border: none;
   outline: none;
-  padding: 2em 1em;
+  padding: 1em 1em;
   cursor: pointer;
   text-transform: uppercase;
   font-size: $defaultFontSizeQuery;
   place-self: stretch;
+  text-align: center;
   color: $white;
   background: linear-gradient(90deg, #971b4c, #192942);
   transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   &:hover {
     transform: scale(0.95);
   }
+}
+
+.overlay-link {
+  place-self: flex-start;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  font-size: inherit;
+  font-family: inherit;
+
+  &:hover {
+    i {
+      transition: transform 250ms ease-in-out;
+      transform: rotate(360deg);
+      color: $rose;
+    }
+  }
+}
+
+.facebook-overlay-link {
+  text-decoration: none;
 }
 
 img[alt*="band"] {

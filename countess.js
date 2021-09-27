@@ -32,7 +32,7 @@ const landingWrapperOverlay = document.querySelector(
   ".landing-wrapper__overlay"
 );
 const landingWrapperImage = document.querySelector(".landing-wrapper__img");
-const navLogo = document.querySelector(".nav-logo");
+
 const landingWrapper = document.querySelector(".landing-wrapper");
 
 window.addEventListener(
@@ -48,11 +48,6 @@ window.addEventListener(
       transform: `translate3d(${distance}px, -${distance * 3}px, 0px)`,
     };
 
-    const navLogoStyles = {
-      transform: `translate3d(0px, ${distance * 3}px, 0px)`,
-      opacity: 80 - distance,
-    };
-
     const landingWrapperStyles = {
       transform: `translate3d(0px, ${distance * 5}px, 0px)`,
     };
@@ -61,11 +56,7 @@ window.addEventListener(
     Object.assign(landingWrapperOverlay.style, landingOverlayStyles);
     Object.assign(landingWrapperImage.style, landingWrapperImageStyles);
 
-    if (window.innerWidth > 768) {
-      Object.assign(navLogo.style, navLogoStyles);
-    }
-
-    distance > 300 && window.innerWidth > 768
+    distance > 500 && window.innerWidth > 768
       ? navigation.classList.add("fixed")
       : navigation.classList.remove("fixed");
   },
@@ -263,7 +254,7 @@ const opacityObserver = new IntersectionObserver(opacityObserverEffect, {
   threshold: 0.8,
 });
 const inViewObserver = new IntersectionObserver(whatIsInViewEffect, {
-  threshold: 0.5,
+  threshold: 0.7,
 });
 
 sectionsObserverGroup.forEach((section) => {

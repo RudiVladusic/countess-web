@@ -28,22 +28,18 @@
 
 @keyframes borderBlur {
   0% {
-    background: #fa448c;
-    filter: blur(0.05em);
+    background: $harvestGold;
   }
 
   50% {
-    background: #fec859;
-    filter: blur(0.05em);
+    background: $lightPurple;
   }
 
   75% {
-    background: #43b5a0;
-    filter: blur(0.05em);
+    background: $blue;
   }
 
   100% {
-    background: #491d88;
-    filter: blur(0.05em);
+    background: $white;
   }
 }
