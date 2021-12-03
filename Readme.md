@@ -13,7 +13,8 @@ HTML/CSS (Sass), JavaScript, Font Awesome icons, Swiper JS.
 
 ## Todo
 
-[ ] Finish styling + few more subtle animations
-[ ] Replace all placeholder images with originals / when i get them
-[ ] Create "lyrics" and "press kit" subpages
-[ ] Make UI facelift
+- [ ] Finish styling + few more subtle animations
+- [ ] Replace all placeholder images with originals / when i get them
+- [ ] Create "lyrics" and "press kit" subpages
+- [ ] Reorganize css
+- [ ] Make UI facelift
