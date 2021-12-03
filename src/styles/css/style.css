@@ -93,18 +93,18 @@
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  scrollbar-color: #6a2ecd #010006;
+  scrollbar-width: thin;
 }
 
 html {
   line-height: 1.6;
   font-family: "Montserrat", sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   scroll-behavior: smooth;
-  scrollbar-color: #6a2ecd #010006;
-  scrollbar-width: thin;
   background: #010006;
   height: 100%;
+  -ms-touch-action: manipulation;
+      touch-action: manipulation;
 }
 
 body {
@@ -206,15 +206,15 @@ nav {
 }
 
 .band-logo {
-  width: 8em;
+  width: 6em;
   -o-object-fit: contain;
      object-fit: contain;
 }
 
 .navbar-wrapper {
-  width: 90%;
+  width: clamp(75vw, 50em, 90vw);
   margin: 0 auto;
-  padding: 0.5em 0;
+  padding: 0.25em 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -264,7 +264,7 @@ nav {
   font-size: inherit;
   -webkit-transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  font-size: clamp(1em, 1vw, 3em);
+  font-size: clamp(1em, 1vw, 2em);
 }
 
 .desktop-nav .desktop-nav__links--group a:hover {
@@ -281,6 +281,7 @@ nav {
 .burger {
   display: none;
   z-index: 700;
+  padding: 0.5em 0;
 }
 
 .burger .bar {
@@ -344,7 +345,7 @@ nav {
   text-transform: lowercase;
   cursor: pointer;
   color: #ededed;
-  font-size: clamp(1em, 1vw, 3em);
+  font-size: clamp(1em, 1vw, 2em);
 }
 
 .mobile-nav .mobile-nav-links :nth-child(1) {
@@ -386,7 +387,7 @@ nav {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  font-size: clamp(1em, 1vw, 3em);
+  font-size: clamp(1em, 1vw, 2em);
 }
 
 .mobile-nav .mobile-nav-info a {
@@ -399,7 +400,7 @@ nav {
 
 .mobile-nav .mobile-nav-signiature {
   text-align: center;
-  font-size: clamp(1em, 1vw, 3em);
+  font-size: clamp(1em, 1vw, 2em);
   color: #ededed;
 }
 
@@ -409,8 +410,8 @@ nav {
 }
 
 .open :nth-child(1) {
-  -webkit-transform: translate(0, 0.5em) rotate(40deg);
-          transform: translate(0, 0.5em) rotate(40deg);
+  -webkit-transform: translate(0, 0.5em) rotate(45deg);
+          transform: translate(0, 0.5em) rotate(45deg);
 }
 
 .open :nth-child(2) {
@@ -420,8 +421,8 @@ nav {
 }
 
 .open :nth-child(3) {
-  -webkit-transform: translate(0, -0.5em) rotate(-40deg);
-          transform: translate(0, -0.5em) rotate(-40deg);
+  -webkit-transform: translate(0, -0.5em) rotate(-45deg);
+          transform: translate(0, -0.5em) rotate(-45deg);
 }
 
 .nav-active {
@@ -454,7 +455,6 @@ nav {
 }
 
 .landing {
-  min-height: 37.5em;
   height: 100%;
   line-height: 1;
   overflow: hidden;
@@ -624,7 +624,7 @@ nav {
 }
 
 .album-content .album-content-wrapper {
-  width: 100%;
+  width: clamp(75vw, 50em, 90vw);
   height: 100%;
   margin: 0 auto;
   display: -webkit-box;
@@ -641,7 +641,6 @@ nav {
   gap: 1em 1em;
   position: relative;
   overflow: hidden !important;
-  width: 90%;
 }
 
 .album-content .album-content-image {
@@ -682,7 +681,7 @@ nav {
 .album-content .album-content-text ul {
   text-align: center;
   list-style-type: lower-roman;
-  font-size: clamp(1em, 1vw, 3em);
+  font-size: clamp(1em, 1vw, 2em);
   font-weight: 200;
 }
 
@@ -729,6 +728,7 @@ nav {
       -ms-flex-pack: justify;
           justify-content: space-between;
   width: 90%;
+  width: clamp(75vw, 50em, 90vw);
   gap: 2.5em;
   margin: 0 auto;
 }
@@ -750,7 +750,7 @@ nav {
 
 .about-biography .about-biography-text p {
   padding: 0.5em;
-  font-size: clamp(1em, 1vw, 3em);
+  font-size: clamp(1em, 1vw, 2em);
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
   font-weight: 200;
@@ -775,12 +775,12 @@ nav {
 }
 
 .about-biography .about-biography-image img {
-  -webkit-filter: drop-shadow(0 0 0.25em #c8baaa);
-          filter: drop-shadow(0 0 0.25em #c8baaa);
+  -webkit-filter: drop-shadow(0.5em 0.5em 0em #9f64d8);
+          filter: drop-shadow(0.5em 0.5em 0em #9f64d8);
 }
 
 .gallery-section {
-  width: 90%;
+  width: clamp(75vw, 50em, 90vw);
   margin: 0 auto;
 }
 
@@ -791,41 +791,37 @@ nav {
 }
 
 .band-members {
-  width: 90% !important;
+  width: clamp(75vw, 50em, 90vw) !important;
+  padding: 1em 0 !important;
 }
 
 .band-card {
   color: #ededed;
-  height: 22em;
-  background: #c8baaa;
+  height: 20em;
+  padding: 0.5em;
   position: relative;
 }
 
 .band-card img {
   -o-object-fit: cover;
      object-fit: cover;
-  -o-object-position: top center;
-     object-position: top center;
-  padding: 0.5em;
-  -webkit-filter: drop-shadow(0em 0em 0.25em #010006);
-          filter: drop-shadow(0em 0em 0.25em #010006);
+  -o-object-position: center;
+     object-position: center;
+  -webkit-filter: drop-shadow(0.5em 0.5em 0em #9f64d8);
+          filter: drop-shadow(0.5em 0.5em 0em #9f64d8);
 }
 
 .band-card__name {
   position: absolute;
-  bottom: 0;
-  width: 100%;
-  font-size: clamp(1em, 1vw, 3em);
-  color: #010006;
-  padding: 0.25em;
-  background: #c8baaa;
-  font-weight: 200;
-}
-
-@media (min-width: 1200px) {
-  .band-card__name {
-    font-weight: 400;
-  }
+  bottom: 0.5em;
+  margin: 0 0 0 0.4em;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  font-size: clamp(1em, 1vw, 2em);
+  color: #ededed;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 0 0.25em;
 }
 
 .swiper-container {
@@ -839,7 +835,7 @@ nav {
 }
 
 .merch {
-  width: 90%;
+  width: clamp(75vw, 50em, 90vw);
 }
 
 .merch-section {
@@ -866,15 +862,14 @@ nav {
 }
 
 .merch-section .merch-wrapper__card img {
-  padding: 1em;
-  height: 15em;
-  -o-object-fit: top;
-     object-fit: top;
+  height: 20em;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 @media (min-width: 1200px) {
   .merch-section .merch-wrapper__card img {
-    height: 30em;
+    height: 25em;
   }
 }
 
@@ -902,7 +897,7 @@ nav {
       -ms-flex-pack: justify;
           justify-content: space-between;
   z-index: 1;
-  font-size: clamp(1em, 1vw, 3em);
+  font-size: clamp(1em, 1vw, 2em);
   font-weight: 200;
 }
 
@@ -914,7 +909,7 @@ nav {
 
 .facebook-group {
   min-height: 37.5em;
-  width: 90%;
+  width: clamp(75vw, 50em, 90vw);
   margin: 0 auto;
   padding: 0.5em;
   position: relative !important;
@@ -1019,7 +1014,6 @@ nav {
   padding: 0 0 2.5em 0;
   position: relative;
   width: 100%;
-  overflow: hidden;
   background: #010006;
 }
 
@@ -1037,6 +1031,28 @@ nav {
   font-size: clamp(1.75em, 2.5vw, 8em);
   text-align: center;
   text-shadow: 0.05em 0.05em 0.05em #010006;
+}
+
+.contact::after {
+  content: "";
+  position: absolute;
+  top: -1.5em;
+  left: 0;
+  height: 1.5em;
+  width: 100%;
+  background: url("/src/images/footer-wave.svg");
+}
+
+.contact::before {
+  content: "";
+  position: absolute;
+  bottom: -1.5em;
+  left: 0;
+  height: 1.5em;
+  width: 100%;
+  background: url("/src/images/footer-wave.svg");
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
 }
 
 .contact .contact-text {
@@ -1062,7 +1078,7 @@ nav {
   position: relative;
   overflow: hidden;
   display: block;
-  font-size: clamp(1em, 1vw, 3em);
+  font-size: clamp(1em, 1vw, 2em);
   text-shadow: 0.05em 0.05em 0.05em #010006;
   font-weight: 200;
 }
@@ -1085,7 +1101,7 @@ nav {
 }
 
 footer {
-  min-height: 30em;
+  min-height: 20em;
   background: #000;
   position: relative;
   display: -ms-grid;
@@ -1158,28 +1174,58 @@ footer .icons-stack i {
   }
 }
 
+footer .icons-stack :nth-child(1) i {
+  text-shadow: 0.25em 0.25em 0 #dd2a7b;
+}
+
 footer .icons-stack :nth-child(1) i:hover {
-  text-shadow: 0.2em 0.2em 0.01em #dd2a7b;
+  color: #dd2a7b;
+  text-shadow: 0 0 0 #dd2a7b;
+}
+
+footer .icons-stack :nth-child(2) i {
+  text-shadow: 0.25em 0.25em 0 #3b5998;
 }
 
 footer .icons-stack :nth-child(2) i:hover {
-  text-shadow: 0.2em 0.2em 0.01em #3b5998;
+  color: #3b5998;
+  text-shadow: 0 0 0 #3b5998;
+}
+
+footer .icons-stack :nth-child(3) i {
+  text-shadow: 0.25em 0.25em 0 #e62117;
 }
 
 footer .icons-stack :nth-child(3) i:hover {
-  text-shadow: 0.2em 0.2em 0.01em #e62117;
+  color: #e62117;
+  text-shadow: 0 0 0 #e62117;
+}
+
+footer .icons-stack :nth-child(4) i {
+  text-shadow: 0.25em 0.25em 0 #1db954;
 }
 
 footer .icons-stack :nth-child(4) i:hover {
-  text-shadow: 0.2em 0.2em 0.01em #1db954;
+  color: #1db954;
+  text-shadow: 0 0 0 #1db954;
+}
+
+footer .icons-stack :nth-child(5) i {
+  text-shadow: 0.25em 0.25em 0 #60909a;
 }
 
 footer .icons-stack :nth-child(5) i:hover {
-  text-shadow: 0.2em 0.2em 0.01em #60909a;
+  color: #60909a;
+  text-shadow: 0 0 0 #60909a;
+}
+
+footer .icons-stack :nth-child(6) i {
+  text-shadow: 0.25em 0.25em 0 #c8baaa;
 }
 
 footer .icons-stack :nth-child(6) i:hover {
-  text-shadow: 0.2em 0.2em 0.01em #c8baaa;
+  color: #c8baaa;
+  text-shadow: 0 0 0 #c8baaa;
 }
 
 footer .signiature {
@@ -1187,7 +1233,7 @@ footer .signiature {
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-area: txt;
-  font-size: clamp(1em, 1vw, 3em);
+  font-size: clamp(1em, 1vw, 2em);
   color: #ededed;
   font-weight: 400;
   text-align: center;
@@ -1266,7 +1312,7 @@ footer .signiature a {
   padding: 1em 1em;
   cursor: pointer;
   text-transform: uppercase;
-  font-size: clamp(1em, 1vw, 3em);
+  font-size: clamp(1em, 1vw, 2em);
   place-self: stretch;
   text-align: center;
   color: #ededed;

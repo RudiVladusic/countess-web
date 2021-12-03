@@ -14,3 +14,12 @@
   font-size: $desktopHeaderSizeQuery;
   text-align: center;
 }
+
+@mixin text-shadow($color) {
+  text-shadow: 0.25em 0.25em 0 $color;
+
+  &:hover {
+    color: $color;
+    text-shadow: 0 0 0 $color;
+  }
+}
